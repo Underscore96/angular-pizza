@@ -1,0 +1,14 @@
+
+
+<div class="menu">
+    <div class="menu-container">
+      <div *ngFor="let pizza of pizze" class="card">
+        <img [src]="pizza.immagine" alt="{{ pizza.nome }}">
+        <div class="card-text">
+          <h2>{{ pizza.nome }}</h2>
+          <button class="add-button" (click)="aggiungiPizzaAlCarrello(pizza)">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

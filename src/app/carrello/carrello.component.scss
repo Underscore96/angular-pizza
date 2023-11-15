@@ -1,0 +1,22 @@
+
+.app-carrello {
+    background-color: #fff;
+    padding: 10px;
+    border-left: 1px solid #ccc;
+    height: 100vh;
+    width: 20%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+  
+  .carrello-content {
+    width: 100%; 
+  }
+  
+  .carrello-titolo {
+    margin-bottom: 10px; 
+  }
+  

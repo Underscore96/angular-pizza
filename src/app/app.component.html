@@ -4,7 +4,12 @@
 
 <div class="titolo">
   <div class="container">
-    <app-menu></app-menu>
-    <app-carrello></app-carrello>
+    <app-menu (pizzaAdded)="addPizza($event)"></app-menu>
+    <!-- <app-carrello [pizzaSelected]="pizzaSelected" (aggiungiPizzaAlCarrello)="aggiungiPizzaAlCarrello(pizzaSelected)"></app-carrello> -->
+    <!-- <app-carrello [pizzaSelected]="pizzaSelected" [pizze]="pizzeNelCarrello" (pizzaAdded)="aggiungiPizzaAlCarrello($event)"></app-carrello> -->
+    <app-carrello [pizzaSelected]="pizzaSelected" (aggiungiPizzaAlCarrello)="aggiungiPizzaAlCarrello(pizzaSelected)"></app-carrello>
+
+
+
   </div>
 </div>

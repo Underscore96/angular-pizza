@@ -1,8 +1,32 @@
+ <div class="app-carrello">
+  <div class="carrello-content">
+    <p class="carrello-titolo">Carrello</p>
+        <div *ngIf="pizzaSelected">
+            <h3>Pizza selezionata:</h3>
+            <p>{{ pizzaSelected.nome }} - Quantità: {{ pizzaSelected.quantita }} </p>
+            <p>Totale: {{ calcolaTotale() }}&nbsp;&euro;</p>
+        </div>
+  </div>
+</div>
 
-
-<div class="app-carrello">
-    <div class="carrello-content">
-      <p class="carrello-titolo">Carrello</p>
+<!-- <div class="app-carrello">
+  <div class="carrello-content">
+    <p class="carrello-titolo">Carrello</p>
+    <div *ngFor="let pizza of carrello" class="carrello-item">
+      <p>{{ pizza.nome }} - Quantità: {{ pizza.quantita }}</p>
     </div>
   </div>
-  
+</div>  -->
+
+ 
+<!-- <div class="app-carrello">
+  <div class="carrello-content">
+    <p class="carrello-titolo">Carrello</p>
+    <div *ngFor="let pizza of carrello" class="carrello-item">
+      <p>{{ pizza.nome }} - Quantità: {{ pizza.quantita }}</p>
+    </div>
+  </div>
+</div> -->
+
+
+

@@ -2,10 +2,11 @@
 
 <div class="menu">
     <div class="menu-container">
-      <div *ngFor="let pizza of pizze" class="card">
+      <div *ngFor="let pizza of pizze" class="card" (pizzaAdded)="aggiungiPizzaAlCarrello($event)">
         <img [src]="pizza.immagine" alt="{{ pizza.nome }}">
         <div class="card-text">
           <h2>{{ pizza.nome }}</h2>
+          <p>Prezzo: {{ pizza.prezzo }}&nbsp;&euro;</p>
           <button class="add-button" (click)="aggiungiPizzaAlCarrello(pizza)">+</button>
         </div>
       </div>

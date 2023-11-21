@@ -1,4 +1,4 @@
- <div class="app-carrello">
+ <!-- <div class="app-carrello">
   <div class="carrello-content">
     <p class="carrello-titolo">Carrello</p>
         <div *ngIf="pizzaSelected">
@@ -7,7 +7,7 @@
             <p>Totale: {{ calcolaTotale() }}&nbsp;&euro;</p>
         </div>
   </div>
-</div>
+</div> -->
 
 <!-- <div class="app-carrello">
   <div class="carrello-content">
@@ -27,6 +27,29 @@
     </div>
   </div>
 </div> -->
+
+
+<!-- <div class="app-carrello">
+  <div class="carrello-content">
+    <p class="carrello-titolo">Carrello</p>
+    <div *ngFor="let pizza of pizze" class="carrello-item">
+      <p>{{ pizza.nome }} - Quantità: {{ pizza.quantita }} - Prezzo totale: {{ pizza.quantita * pizza.prezzo }}&nbsp;&euro;</p>
+    </div>
+    <p>Totale: {{ calcolaTotale() }}&nbsp;&euro;</p>
+  </div>
+</div> -->
+
+
+<div class="app-carrello">
+  <div class="carrello-content">
+    <p class="carrello-titolo">Carrello</p>
+    <div *ngFor="let pizza of pizzeNelCarrello" class="carrello-item">
+      <p>{{ pizza.nome }} - Quantità: {{ pizza.quantita }} - Prezzo totale: {{ pizza.quantita * pizza.prezzo }}&nbsp;&euro;</p>
+      <button (click)="rimuoviPizza(pizza)" class="rimuovi-button">Rimuovi dal Carrello</button>
+    </div>
+    <p>Totale Complessivo: {{ calcolaTotaleComplessivo() }}&nbsp;&euro;</p>
+  </div>
+</div>
 
 
 

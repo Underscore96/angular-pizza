@@ -4,11 +4,13 @@ import { EventEmitter, Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class PizzeService {
-  pizzeNelCarrello: any;
+  pizzeNelCarrello: any[] = [];
   pizzaSelected: any[] = [];
   rimuoviPizzaDalCarrello = new EventEmitter<any>();
 
-  constructor() { }
+  constructor() { 
+    this.pizzeNelCarrello = [];
+  }
 
   getPizze(): any[] {
     return [

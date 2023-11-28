@@ -1,33 +1,3 @@
-<!-- 
-
-<app-title></app-title>
-
-<div class="titolo">
-  <div class="container">
-    <app-menu (pizzaAdded)="addPizza($event)"></app-menu> -->
-    <!-- <app-carrello [pizzaSelected]="pizzaSelected" (aggiungiPizzaAlCarrello)="aggiungiPizzaAlCarrello(pizzaSelected)"></app-carrello> -->
-    <!-- <app-carrello [pizzaSelected]="pizzaSelected" [pizze]="pizzeNelCarrello" (pizzaAdded)="aggiungiPizzaAlCarrello($event)"></app-carrello> -->
-    <!-- <app-carrello [pizzaSelected]="pizzaSelected" (aggiungiPizzaAlCarrello)="aggiungiPizzaAlCarrello(pizzaSelected)"></app-carrello>
-
-
-
-  </div>
-</div> -->
-
-
-
-<!-- <app-title></app-title>
-
-<div class="titolo">
-  <div class="container">
-    <app-menu (pizzaAdded)="addPizza($event)"></app-menu>
-    <app-carrello
-      [pizzaSelected]="pizzaSelected"
-      [pizzeNelCarrello]="pizzeNelCarrello"
-    ></app-carrello>
-  </div>
-</div> -->
-
 
 
 
@@ -44,7 +14,6 @@
       <div class="col-2">
         <app-carrello
           [pizzaSelected]="pizzaSelected"
-          [pizzeNelCarrello]="pizzeNelCarrello"
           (aggiungiPizzaAlCarrello)="aggiungiPizzaAlCarrello($event)"
           (rimuoviPizzaDalCarrello)="rimuoviPizzaDalCarrello($event)"
         ></app-carrello>

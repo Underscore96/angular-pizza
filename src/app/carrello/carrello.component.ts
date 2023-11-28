@@ -40,6 +40,7 @@
 
 
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { PizzeService } from '../pizze.service';
 
 @Component({
   selector: 'app-carrello',
@@ -47,32 +48,43 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./carrello.component.scss']
 })
 export class CarrelloComponent {
-  @Input() pizzaSelected: any;
+  // @Input() pizzaSelected: any;
   @Input() pizzeNelCarrello: any[] = [];
-  @Output() pizzaRimossa = new EventEmitter<any>();
-  @Output() rimuoviPizzaDalCarrello = new EventEmitter<any>();
+  @Input() pizzaSelected: any[] = [];
+  // @Output() pizzaRimossa = new EventEmitter<any>();
+  // @Output() rimuoviPizzaDalCarrello = new EventEmitter<any>();
 
   carrello: any[] = [];
 
+  // calcolaTotaleComplessivo(): number {
+  //   return this.pizzeNelCarrello.reduce((total, pizza) => total + pizza.quantita * pizza.prezzo, 0);
+  // }
+
+  // rimuoviPizza(pizza: any): void {
+  //   const pizzaNelCarrello = this.pizzeNelCarrello.find(p => p.nome === pizza.nome);
+
+  //   if (pizzaNelCarrello) {
+  //     if (pizzaNelCarrello.quantita > 1) {
+     
+  //       pizzaNelCarrello.quantita--;
+  //     } else {
+       
+  //       const index = this.pizzeNelCarrello.indexOf(pizzaNelCarrello);
+  //       this.pizzeNelCarrello.splice(index, 1);
+  //     }
+
+
+  //     this.rimuoviPizzaDalCarrello.emit(this.pizzeNelCarrello);
+  //   }
+  // }
+
+  constructor(private pizzeService: PizzeService) {}
+
   calcolaTotaleComplessivo(): number {
-    return this.pizzeNelCarrello.reduce((total, pizza) => total + pizza.quantita * pizza.prezzo, 0);
+    return this.pizzeService.calcolaTotaleComplessivo();
   }
 
   rimuoviPizza(pizza: any): void {
-    const pizzaNelCarrello = this.pizzeNelCarrello.find(p => p.nome === pizza.nome);
-
-    if (pizzaNelCarrello) {
-      if (pizzaNelCarrello.quantita > 1) {
-     
-        pizzaNelCarrello.quantita--;
-      } else {
-       
-        const index = this.pizzeNelCarrello.indexOf(pizzaNelCarrello);
-        this.pizzeNelCarrello.splice(index, 1);
-      }
-
-
-      this.rimuoviPizzaDalCarrello.emit(this.pizzeNelCarrello);
-    }
+    this.pizzeService.rimuoviPizza(pizza);
   }
 }

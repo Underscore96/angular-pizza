@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { PizzeService } from '../pizze.service';
 
 @Component({
   selector: 'app-menu',
@@ -6,6 +7,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent {
+
+
+  constructor(private pizzeService: PizzeService) {}
 
 
   @Output() pizzaAdded = new EventEmitter<any>();
@@ -18,7 +22,18 @@ export class MenuComponent {
   ];
 
 
-  aggiungiPizzaAlCarrello(pizza: any) {
+  // aggiungiPizzaAlCarrello(pizza: any) {
+  //   pizza.quantita++;
+  //   this.pizzaAdded.emit(pizza);
+  // }
+
+
+  // addPizza(pizza: any): void {
+  //   this.pizzeService.addPizza(pizza);
+  // }
+
+  aggiungiPizzaAlCarrello(pizza: any): void {
+    this.pizzeService.addPizza(pizza);
     pizza.quantita++;
     this.pizzaAdded.emit(pizza);
   }

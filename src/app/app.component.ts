@@ -27,8 +27,9 @@
 
 
 
-// app.component.ts
-import { Component } from '@angular/core';
+
+import { Component, Input } from '@angular/core';
+import { PizzeService } from './pizze.service';
 
 @Component({
   selector: 'app-root',
@@ -36,28 +37,36 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  constructor(private pizzeService: PizzeService) {
+    this.pizze = pizzeService.getPizze();
+  }
+
+
   pizze: { nome: string, immagine: string, quantita: number, prezzo: number }[] = [
     { nome: 'Margherita', immagine: '...', quantita: 0, prezzo: 10 },
     { nome: 'Pepperoni', immagine: '...', quantita: 0, prezzo: 13 },
     { nome: 'Vegetariana', immagine: '...', quantita: 0, prezzo: 14 }
   ];
 
-  pizzaSelected: any;
+  pizzaSelected: any[] = [];
 
-  pizzeNelCarrello: { nome: string, immagine: string, quantita: number, prezzo: number }[] = [];
+  pizzeNelCarrello: any;
 
-  addPizza(pizza: any): void {
+
+
+  // addPizza(pizza: any): void {
     
-    const pizzaIndex = this.pizzeNelCarrello.findIndex(p => p.nome === pizza.nome);
+  //   const pizzaIndex = this.pizzeNelCarrello.findIndex(p => p.nome === pizza.nome);
 
-    if (pizzaIndex !== -1) {
+  //   if (pizzaIndex !== -1) {
     
-      this.pizzeNelCarrello[pizzaIndex].quantita++;
-    } else {
+  //     this.pizzeNelCarrello[pizzaIndex].quantita++;
+  //   } else {
       
-      this.pizzeNelCarrello.push({ ...pizza, quantita: 1 });
-    }
-  }
+  //     this.pizzeNelCarrello.push({ ...pizza, quantita: 1 });
+  //   }
+  // }
 
   // aggiungiPizzaAlCarrello(pizza: any): void {
   //   this.addPizza(pizza);
@@ -66,12 +75,29 @@ export class AppComponent {
   // rimuoviPizzaDalCarrello(carrello: any[]): void {
   //   this.pizzeNelCarrello = carrello;
   // }
-  aggiungiPizzaAlCarrello(pizza: any): void {
-    this.addPizza(pizza);
+  // aggiungiPizzaAlCarrello(pizza: any): void {
+  //   this.addPizza(pizza);
+  // }
+
+  // rimuoviPizzaDalCarrello(carrello: any[]): void {
+  //   this.pizzeNelCarrello = carrello;
+  // }
+
+  addPizza(pizza: any): void {
+    this.pizzaSelected = pizza;
+    this.pizzeService.aggiungiPizzaAlCarrello(pizza);
   }
 
-  rimuoviPizzaDalCarrello(carrello: any[]): void {
-    this.pizzeNelCarrello = carrello;
+  // pizzeNelCarrello(): { nome: string, immagine: string, quantita: number, prezzo: number }[] {
+  //   return this.pizzeService.pizzeNelCarrello();
+  // }
+
+  aggiungiPizzaAlCarrello(pizza: any): void {
+    this.pizzeService.aggiungiPizzaAlCarrello(pizza);
+  }
+
+  rimuoviPizzaDalCarrello(pizza: any): void {
+    this.pizzeService.rimuoviPizza(pizza);
   }
   
 }

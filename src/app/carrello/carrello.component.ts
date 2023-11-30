@@ -1,5 +1,39 @@
+// import { Component, Input, OnInit } from '@angular/core';
+// import { PizzeService } from '../pizze.service';
+
+// @Component({
+//   selector: 'app-carrello',
+//   templateUrl: './carrello.component.html',
+//   styleUrls: ['./carrello.component.scss']
+// })
+// export class CarrelloComponent implements OnInit {
+//   @Input() pizzaSelected: any[] = [];
+
+//   carrello: any[] = [];
+//   pizzeNelCarrello: any;
+
+
+//   constructor(private pizzeService: PizzeService) {}
+
+//   ngOnInit() {
+//     this.pizzeNelCarrello = this.pizzeService.pizzeNelCarrello;
+//   }
+
+//   calcolaTotaleComplessivo(): number {
+//     return this.pizzeService.calcolaTotaleComplessivo();
+//   }
+
+//   rimuoviPizza(pizza: any): void {
+//     this.pizzeService.rimuoviPizza(pizza);
+//   }
+// }
+
+
+
+
 import { Component, Input, OnInit } from '@angular/core';
-import { PizzeService } from '../pizze.service';
+import { ProdottiService } from '../prodotti.service';
+import { CarrelloService } from '../carrello.service';
 
 @Component({
   selector: 'app-carrello',
@@ -7,23 +41,29 @@ import { PizzeService } from '../pizze.service';
   styleUrls: ['./carrello.component.scss']
 })
 export class CarrelloComponent implements OnInit {
-  @Input() pizzaSelected: any[] = [];
-
+  // @Input() pizzeNelCarrello: any[] = [];
+  @Input() prodottoSelected: any[] = [];
   carrello: any[] = [];
-  pizzeNelCarrello: any;
+  
 
-
-  constructor(private pizzeService: PizzeService) {}
+  constructor(private prodottiService: ProdottiService, private carrelloService: CarrelloService) {}
 
   ngOnInit() {
-    this.pizzeNelCarrello = this.pizzeService.pizzeNelCarrello;
+
+    // this.carrello = this.carrelloService.getCarrello();
+    this.carrello = this.carrelloService.getCarrello();
+ 
   }
 
   calcolaTotaleComplessivo(): number {
-    return this.pizzeService.calcolaTotaleComplessivo();
+
+    return this.carrelloService.calcolaTotale();
   }
 
-  rimuoviPizza(pizza: any): void {
-    this.pizzeService.rimuoviPizza(pizza);
+  rimuoviProdotto(prodotto: any): void {
+
+    this.carrelloService.rimuoviDalCarrello(prodotto);
   }
+
 }
+

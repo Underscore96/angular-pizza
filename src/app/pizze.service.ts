@@ -5,11 +5,14 @@ import { EventEmitter, Injectable } from '@angular/core';
 })
 export class PizzeService {
   pizzeNelCarrello: any[] = [];
+  bibitaNelCarrello: any[] = [];
   pizzaSelected: any[] = [];
+  bibitaSelected: any[] = [];
   rimuoviPizzaDalCarrello = new EventEmitter<any>();
 
   constructor() { 
     this.pizzeNelCarrello = [];
+    this.bibitaNelCarrello = [];
   }
 
   getPizze(): any[] {
@@ -35,8 +38,27 @@ export class PizzeService {
     }
   }
 
+
+  addBibita(bibita: any): void {
+    
+    const bibitaIndex = this.bibitaNelCarrello.findIndex((b: { nome: any; }) => b.nome === bibita.nome);
+
+    if (bibitaIndex !== -1) {
+    
+      this.bibitaNelCarrello[bibitaIndex].quantita++;
+    } else {
+      
+      this.bibitaNelCarrello.push({ ...bibita, quantita: 1 });
+    }
+  }
+
+
   aggiungiPizzaAlCarrello(pizza: any): void {
     this.addPizza(pizza);
+  }
+
+  aggiungiBibitaAlCarrello(bibita: any): void {
+    this.addBibita(bibita);
   }
 
 

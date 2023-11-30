@@ -1,0 +1,39 @@
+
+
+.bibite {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .bibite-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .card-bibite {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px;
+    width: 400px;
+    text-align: center;
+  }
+  
+  .card-img {
+    width: 100%;
+    height: 300px
+  }
+  
+  .card-text {
+    padding: 10px;
+    width: 100%;
+    height: 100px
+  }
+
+  .add-button {
+    margin-top: 1px; 
+  }
+  

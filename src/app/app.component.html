@@ -1,8 +1,28 @@
 
-
-
 <app-title></app-title>
 
+<nav class="nav-buttons">
+  <a routerLink="/menu" class="button">Pizze</a> <div></div>
+  <a routerLink="/bibite" class="button">Bibite</a>
+</nav>
+<!-- 
+<router-outlet *ngIf="!AppBibite"></router-outlet> -->
+
+<!-- <app-menu *ngIf="!AppBibite" (pizzaAdded)="addPizza($event)"></app-menu> -->
+<app-menu *ngIf="!AppBibite"></app-menu>
+<app-bibite *ngIf="AppBibite"></app-bibite>
+
+<div class="col-2">
+  <app-carrello></app-carrello>
+
+  <!-- <app-carrello
+    [pizzaSelected]="pizzaSelected"
+    (aggiungiPizzaAlCarrello)="aggiungiPizzaAlCarrello($event)"
+    (rimuoviPizzaDalCarrello)="rimuoviPizzaDalCarrello($event)"
+  ></app-carrello> -->
+</div>
+
+<!-- 
 <div class="titolo">
   <div class="container">
     <div class="row">
@@ -20,7 +40,7 @@
       </div>
     </div>
   </div>
-</div>
+</div>  -->
 
 
 

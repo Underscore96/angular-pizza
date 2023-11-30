@@ -1,0 +1,17 @@
+
+<div class="bibite">
+    <div class="bibite-container">
+      <div *ngFor="let bibita of bibite" class="card-bibite">
+        <img [src]="bibita.immagine" alt="{{ bibita.nome }}" class="card-img">
+        <div class="card-text">
+          <h2>{{ bibita.nome }}</h2>
+          <p>Prezzo: {{ bibita.prezzo }}&nbsp;&euro;</p>
+          <!-- <button (click)="rimuoviPizza(pizza)" class="rimuovi-button">Rimuovi dal Carrello</button> -->
+          <!-- <button class="add-button" (click)="aggiungiBibitaAlCarrello(bibita)">+</button> -->
+          <!-- <button class="add-button" (click)="aggiungiBibitaAlCarrello(bibita)">+</button> -->
+          <button class="add-button" (click)="aggiungiAlCarrello(bibita)">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

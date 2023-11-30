@@ -40,16 +40,34 @@
 </div> -->
 
 
+<!-- <div class="app-carrello">
+  <div class="carrello-content">
+    <p class="carrello-titolo">Carrello</p> -->
+    <!-- <div *ngFor="let pizza of pizzeNelCarrello" class="carrello-item"> -->
+    <!-- <div *ngFor="let prodotto of carrello" class="carrello-item"></div> -->
+      <!-- <p>{{ pizza.nome }} - Quantità: {{ pizza.quantita }} - Prezzo totale: {{ pizza.quantita * pizza.prezzo }}&nbsp;&euro;</p> -->
+      <!-- <button (click)="rimuoviPizza(pizza)" class="rimuovi-button">Rimuovi dal Carrello</button> -->
+      <!-- <p>{{ prodotto.nome }} - Quantità: {{ prodotto.quantita }} - Prezzo totale: {{ prodotto.quantita * prodotto.prezzo }}&nbsp;&euro;</p>
+      <button (click)="rimuoviProdotto(prodotto)" class="rimuovi-button">Rimuovi dal Carrello</button>
+   
+    <p>Totale Complessivo: {{ calcolaTotaleComplessivo() }}&nbsp;&euro;</p>
+  </div>
+</div> -->
+
+
 <div class="app-carrello">
   <div class="carrello-content">
     <p class="carrello-titolo">Carrello</p>
-    <div *ngFor="let pizza of pizzeNelCarrello" class="carrello-item">
-      <p>{{ pizza.nome }} - Quantità: {{ pizza.quantita }} - Prezzo totale: {{ pizza.quantita * pizza.prezzo }}&nbsp;&euro;</p>
-      <button (click)="rimuoviPizza(pizza)" class="rimuovi-button">Rimuovi dal Carrello</button>
+    
+    <div *ngFor="let prodotto of carrello" class="carrello-item">
+      <p>{{ prodotto.nome }} - Quantità: {{ prodotto.quantita }} - Prezzo totale: {{ prodotto.quantita * prodotto.prezzo }}&nbsp;&euro;</p>
+      <button (click)="rimuoviProdotto(prodotto)" class="rimuovi-button">Rimuovi dal Carrello</button>
     </div>
+
     <p>Totale Complessivo: {{ calcolaTotaleComplessivo() }}&nbsp;&euro;</p>
   </div>
 </div>
+
 
 
 

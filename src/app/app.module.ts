@@ -7,13 +7,17 @@ import { TitleComponent } from './title/title.component';
 import { MenuComponent } from './menu/menu.component';
 import { CarrelloComponent } from './carrello/carrello.component';
 import {MatButtonModule} from '@angular/material/button';
+import { BibiteComponent } from './bibite/bibite.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TitleComponent,
     MenuComponent,
-    CarrelloComponent
+    CarrelloComponent,
+    BibiteComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

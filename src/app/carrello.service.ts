@@ -28,8 +28,13 @@ export class CarrelloService {
 
   rimuoviDalCarrello(prodotto: any): void {
     const index = this.carrello.indexOf(prodotto);
+  
     if (index !== -1) {
-      this.carrello.splice(index, 1);
+      if (prodotto.quantita > 1) {
+        this.carrello[index].quantita--;
+      } else {
+        this.carrello.splice(index, 1);
+      }
     }
   }
 

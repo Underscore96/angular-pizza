@@ -1,13 +1,17 @@
 .app-carrello {
-  background-color: #fff;
+  border-radius: 15px 50px 30px;;
+  background-color: #c2b5b5d0;
   padding: 10px;
   border-left: 1px solid #ccc;
   box-sizing: border-box;
   display: flex;
-  flex-direction: right;
+  flex-direction: column; 
+  align-items: flex-end; 
   max-width: 200px;
   width: 100%;
-  align-content: flex-start;
+  position: fixed; 
+  top: 5%; 
+  right: 2%; 
 }
 
 .carrello-content {

@@ -1,1 +1,30 @@
-<p>form works!</p>
+
+<button class="login-button" (click)="mostraForm()">Login</button>
+
+
+<div class="modal" [class.show]="isFormVisible">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">I tuoi dati</h5>
+        <button type="button" class="close" (click)="nascondiForm()">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <label for="indirizzo">Indirizzo:</label>
+          <input type="text" id="indirizzo" name="indirizzo" [(ngModel)]="indirizzo" required>
+
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" [(ngModel)]="nome" required>
+
+          <label for="cognome">Cognome:</label>
+          <input type="text" id="cognome" name="cognome" [(ngModel)]="cognome" required>
+
+          <button type="button" class="btn btn-primary" (click)="inviaForm()">Invia</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

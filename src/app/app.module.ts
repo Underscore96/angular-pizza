@@ -9,6 +9,7 @@ import { CarrelloComponent } from './carrello/carrello.component';
 import {MatButtonModule} from '@angular/material/button';
 import { BibiteComponent } from './bibite/bibite.component';
 import { FormComponent } from './form/form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormComponent } from './form/form.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

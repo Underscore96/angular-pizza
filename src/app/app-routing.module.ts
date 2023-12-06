@@ -6,7 +6,6 @@ import { BibiteComponent } from './bibite/bibite.component';
 
 const routes: Routes = [
   { path: 'menu', component: MenuComponent },
-  { path: 'carrello', component: CarrelloComponent },
   { path: 'bibite', component: BibiteComponent },
   { path: '**', redirectTo: '/menu', pathMatch: 'full' },
 ];

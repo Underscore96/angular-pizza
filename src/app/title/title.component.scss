@@ -1,9 +1,55 @@
-
-
 .titolo {
-    background-color: rgb(227, 196, 227);
-    color: white;
-    padding: 10px;
-    text-align: center;
+  background-color: rgba(227, 196, 227, 0.595);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px; 
+  overflow: hidden; 
+}
+
+body {
+  background-color: rgb(109, 36, 0);
+  color: #aaa;
+  font-size: 40px;
+  margin: 0;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform .3s ease-in-out;
+
+  &:hover {
+    transform: rotateX(35deg);
+    span {
+      color: #ccc;
+      &:nth-child(odd) {
+        transform: skewY(15deg);
+      }
+      &:nth-child(even) {
+        transform: skewY(-15deg);
+        background-color: #dacfda;
+        color: #000000cd;
+      }
+    }
   }
-  
+
+  > span {
+    display: block;
+    background-color: #4a4141;
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    transition: transform .3s ease-in-out, color .3s ease-in-out, background-color .3s ease-in-out;
+    box-shadow: 0 40px 50px rgba(0, 0, 0, 0.1);
+
+    &:first-child {
+      border-radius: 5px 0 0 5px;
+    }
+  }
+}

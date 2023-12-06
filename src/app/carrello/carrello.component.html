@@ -57,7 +57,11 @@
 
 <div class="app-carrello">
   <div class="carrello-content">
-    <p class="carrello-titolo">Carrello</p>
+    <p class="carrello-titolo">Carrello</p> <span class="material-symbols-outlined">
+      shopping_cart
+      </span>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
     
     <div *ngFor="let prodotto of carrello" class="carrello-item">
       <p>{{ prodotto.nome }} - Quantità: {{ prodotto.quantita }} - Prezzo totale: {{ prodotto.quantita * prodotto.prezzo }}&nbsp;&euro;</p>

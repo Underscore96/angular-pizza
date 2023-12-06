@@ -1,0 +1,38 @@
+<!-- <form [formGroup]="moduloReattivo" (ngSubmit)="inviaModulo()">
+    <div>
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" formControlName="nome" />
+    </div>
+  
+    <div>
+      <label for="cognome">Cognome:</label>
+      <input type="text" id="cognome" formControlName="cognome" />
+    </div>
+  
+    <div>
+      <label for="indirizzo">Indirizzo:</label>
+      <input type="text" id="indirizzo" formControlName="indirizzo" />
+    </div>
+  
+    <button type="submit" [disabled]="!moduloReattivo.valid">Invia</button>
+  </form> -->
+  
+
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+    <label for="first-name">First Name: </label>
+    <input id="first-name" type="text" formControlName="firstName">
+  
+    <label for="last-name">Last Name: </label>
+    <input id="last-name" type="text" formControlName="lastName">
+
+    <label for="address">Indirizzo: </label>
+    <input id="address" type="text" formControlName="address">
+
+    <p>Complete the form to enable button.</p>
+    <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+  
+  </form>
+
+
+  

@@ -1,20 +1,57 @@
 
 <app-title></app-title>
 
-<nav class="nav-buttons">
+<!-- <nav class="nav-buttons">
   <a routerLink="/menu" class="button">Pizze</a> <div></div>
   <a routerLink="/bibite" class="button">Bibite</a>
+</nav> -->
+
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+      <span class="nav-buttons">
+      <a routerLink="/menu" class="button">Pizze</a> <div></div>
+      <a routerLink="/bibite" class="button">Bibite</a>
+    </span>
+
+  
+    <div class="search-bar">
+
+      <form class="d-flex input-group w-auto">
+          <input
+            type="search"
+            class="form-control rounded"
+            placeholder="Cerca"
+            aria-label="Search"
+            aria-describedby="search-addon"
+
+          />
+          <span class="material-symbols-outlined">
+            search
+          </span>
+      </form>
+    </div>
+  </div>
 </nav>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+
+
 <!-- 
 <router-outlet *ngIf="!AppBibite"></router-outlet> -->
 
 <!-- <app-menu *ngIf="!AppBibite" (pizzaAdded)="addPizza($event)"></app-menu> -->
-<app-menu *ngIf="!AppBibite"></app-menu>
-<app-bibite *ngIf="AppBibite"></app-bibite>
+
+
+
+<!-- <app-menu *ngIf="!AppBibite"></app-menu>
+<app-bibite *ngIf="AppBibite"></app-bibite> -->
 <app-form></app-form>
+<app-reactiveform></app-reactiveform>
 
 <div class="col-2">
   <app-carrello></app-carrello>
+
+  
 
   <!-- <app-carrello
     [pizzaSelected]="pizzaSelected"
@@ -22,7 +59,7 @@
     (rimuoviPizzaDalCarrello)="rimuoviPizzaDalCarrello($event)"
   ></app-carrello> -->
 </div>
-
+<router-outlet></router-outlet>
 <!-- 
 <div class="titolo">
   <div class="container">
